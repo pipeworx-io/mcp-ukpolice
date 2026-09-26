@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-ukpolice",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "UK Police MCP — wraps the UK Police Data API (free, no auth)",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-e7665eb08e0cce6cdcc6c3fdebefdf17462c5dab961b7d6a0d3fb3cc0370a64a",
-    "sourceCommit": "b0fb3c31386cf0256dcf1e2f1b3440435a87ec35"
+    "sourceHash": "v1-caae9c33ce866d31ead419297a80cf1c56a5062504df19c5834e6912bb758585",
+    "sourceCommit": "66a0692f029179984440cef6938cba7fdd41d66d"
   }
 }
