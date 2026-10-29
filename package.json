@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-ukpolice",
-  "version": "1.0.2",
-  "description": "UK Police MCP — wraps the UK Police Data API (free, no auth)",
+  "version": "1.1.0",
+  "description": "UK Police MCP — wraps the UK Police Data API (free, no auth) https://data.police.uk/api",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-ukpolice": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "ukpolice"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-ukpolice.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/ukpolice",
   "pipeworx": {
-    "sourceHash": "v1-caae9c33ce866d31ead419297a80cf1c56a5062504df19c5834e6912bb758585",
-    "sourceCommit": "66a0692f029179984440cef6938cba7fdd41d66d"
+    "mode": "gateway",
+    "slug": "ukpolice",
+    "gatewaySlug": "ukpolice",
+    "sourceHash": "v1-bfcd150afe9234593fdae03d2489c9f278023ca7358ab144eac95f3aad5556a2",
+    "sourceCommit": "f47d581679e1e887373df51ba623f891fbe4c464"
   }
 }

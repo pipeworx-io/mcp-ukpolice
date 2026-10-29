@@ -1,0 +1,61 @@
+[
+  {
+    "name": "get_crimes",
+    "description": "Get street-level crimes reported near a latitude/longitude in England, Wales or Northern Ireland, from the official police open data. Returns each crime's category, street, month and outcome status, plus the month the figures are actually for. Answers \"what crime was reported near <place>\" and \"how much burglary is there around these coordinates\". Omit `date` for the latest published month — the feed runs about two months in arrears, and a month that has not been published yet is reported as such rather than as an absence of crime.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number",
+          "description": "Latitude of the location"
+        },
+        "lng": {
+          "type": "number",
+          "description": "Longitude of the location"
+        },
+        "date": {
+          "type": "string",
+          "description": "Month in YYYY-MM form, e.g. \"2026-05\". Omit for the latest published month. Data lags roughly two months; if the requested month is not published yet, the most recent available month is returned and labelled."
+        }
+      },
+      "required": [
+        "lat",
+        "lng"
+      ]
+    }
+  },
+  {
+    "name": "get_forces",
+    "description": "List all police forces in England, Wales, and Northern Ireland. Returns force ID and name.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "get_outcomes",
+    "description": "Get outcomes for crimes at a location for a given month. Returns outcome category and date for each crime.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number",
+          "description": "Latitude of the location"
+        },
+        "lng": {
+          "type": "number",
+          "description": "Longitude of the location"
+        },
+        "date": {
+          "type": "string",
+          "description": "Month to query in YYYY-MM format (e.g. \"2024-01\"). Defaults to latest available."
+        }
+      },
+      "required": [
+        "lat",
+        "lng"
+      ]
+    }
+  }
+]
